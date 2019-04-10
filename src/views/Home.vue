@@ -16,7 +16,7 @@ export default {
     HelloWorld
   },
   methods: {
-    handleClick(type) {
+    handleClick (type) {
       if (type === 'back') {
         this.$router.back()
         // this.$router.go(-1)

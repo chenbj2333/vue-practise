@@ -17,7 +17,8 @@ const routes = [
   {
     path: '/argu/:name', // 动态路由
     name: 'argu',
-    component: () => import('@/views/Argu.vue')
+    component: () => import('@/views/Argu.vue'),
+    props: true
   },
   {
     path: '/parent', // 嵌套路由
