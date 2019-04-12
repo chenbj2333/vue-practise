@@ -2,7 +2,7 @@ const path = require('path')
 
 // __dirname当前文件所在目录路径
 const resolve = dir => path.join(__dirname, dir)
-// 项目的基本路径:是否为production模式，是的话打包时比如可以打包到域名的admin下
+// 项目的基本路径(打包后放到服务器上的地址):是否为production模式，是的话打包时比如可以打包到域名的admin下
 // 可以按如下写，如果时开发模式，写/就可以
 const BASE_URL = process.env.NODE_ENV === 'production' ? '/admin' : '/'
 
