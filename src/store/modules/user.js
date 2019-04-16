@@ -24,7 +24,6 @@ const actions = {
           setToken(res.data.token)
           resolve(res)
           localStorage.setItem('username', res.data.name)
-          console.log(localStorage.getItem('username'))
           commit(types.CHANGE_USER_NAME, localStorage.getItem('username'))
         } else {
           reject(res.mes)
