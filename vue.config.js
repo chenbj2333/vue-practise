@@ -15,8 +15,8 @@ module.exports = {
     config.resolve.alias.set('@', resolve('src'))
       .set('_c', resolve('src/components'))
   },
-  productionSourceMap: false // 打包时不生成.map文件
-  // devServer: {
-  //   proxy: 'http://localhost:4000' // 把任何未知请求都代理到这个url来满足跨域的需求
-  // }
+  productionSourceMap: false, // 打包时不生成.map文件
+  devServer: {
+    proxy: 'http://localhost:3000' // 把任何未知请求都代理到这个url来满足跨域的需求
+  }
 }

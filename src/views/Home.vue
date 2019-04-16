@@ -1,24 +1,27 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/img/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div :style="{color: 'red'}">{{username}}</div>
+    <Button @click="exit">退出登录</Button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import { demoAxios } from '@/api/demo'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
+  computed: {
+    ...mapGetters(['username'])
   },
-  mounted() {
-    demoAxios({ name: 'aaa', password: 'bbb' }).then(res => {
-      console.log('res:', res)
-    })
+  methods: {
+    ...mapActions(['logout']),
+    exit() {
+      this.logout()
+      this.$router.push({
+        name: 'login'
+      })
+    }
   }
 }
 </script>
